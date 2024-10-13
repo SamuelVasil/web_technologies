@@ -1,2 +1,1 @@
-zladol som to sam
-test-Matej
+Test your git repository.
