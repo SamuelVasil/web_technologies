@@ -1,42 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2024 Procesory</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Project</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="home">
-            <h2>Home Section</h2>
-            <p>This is the home section of the website.</p>
-        </section>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">2024 Procesory</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="flex_grid.html">Vykonostne porovnanie</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">sekcia_zmena?</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-        <section id="about">
-            <h2>About Section</h2>
-            <p>This section contains information about the project.</p>
-        </section>
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <h2 class="text-center mb-4">Arrow Lake a Zen 5-x3D</h2>
+    
+    <!-- First Section with Image and Text -->
+    <div class="row content-section">
+      <div class="col-12 col-md-6">
+        <img src="media/intel-arrowlake1.jpg" alt="Procesor Image 1" class="img-placeholder">
+      </div>
+      <div class="col-12 col-md-6">
+        <h3>E-cores vs X3D cache</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
 
-        <section id="contact">
-            <h2>Contact Section</h2>
-            <p>Here is how you can contact us.</p>
-        </section>
-    </main>
+    <!-- Second Section with Image and Text -->
+    <div class="row content-section">
+      <div class="col-12 col-md-6 order-md-2">
+        <img src="media/x3D.jpg" alt="Procesor Image 2" class="img-placeholder">
+      </div>
+      <div class="col-12 col-md-6 order-md-1">
+        <h3>Performace per watt</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate eleifend sapien, ac pulvinar elit convallis vel. Curabitur venenatis nunc id auctor pretium. Nam commodo, erat a laoreet condimentum, ligula massa efficitur augue.</p>
+        <p>Praesent nec dui dictum, sollicitudin erat a, malesuada orci. Nullam nec libero nec neque pharetra efficitur. Morbi id fringilla est. Suspendisse potenti. Fusce tristique malesuada felis, nec tincidunt augue fermentum in.</p>
+      </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 My Project. All rights reserved.</p>
-    </footer>
+    <!-- Third Section with Image and Text -->
+    <div class="row content-section">
+      <div class="col-12 col-md-6">
+        <img src="media/chiplet.jpg" alt="Procesor Image 3" class="img-placeholder">
+      </div>
+      <div class="col-12 col-md-6">
+        <h3>Tile base architektura vs chiplet architektura</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at ante nisl. Aenean pharetra malesuada neque nec convallis. Vivamus sodales libero nec augue finibus, eget tincidunt elit efficitur.</p>
+        <p>Phasellus ac justo turpis. Aliquam erat volutpat. Cras et lectus et leo dictum tincidunt vel ac justo. Integer vel libero ac turpis vulputate volutpat quis id metus. Cras ut justo vitae lectus blandit feugiat.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<footer class="bg-dark text-white text-center py-3 mt-4">
+  <div class="container">
+    <p class="mb-1">&copy; 2024 Procesory | All Rights Reserved</p>
+  </div>
+</footer>
 </html>
