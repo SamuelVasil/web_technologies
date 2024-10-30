@@ -9,12 +9,12 @@
       font-family: Arial, sans-serif;
       line-height: 1.6;
       background-color: #f4f4f4;
-      color: #333;
+      color: #212529;
     }
 
     /* Navbar */
     .navbar {
-      background-color: #333;
+      background-color: #212529;
       color: #fff;
       padding: 15px;
       display: flex;
@@ -93,7 +93,7 @@
 
     /* Footer */
     footer {
-      background-color: #333;
+      background-color: #212529;
       color: white;
       text-align: center;
       padding: 10px 0;

@@ -1,0 +1,43 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h2 {
+  font-size: 2em;
+  color: #444;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  border-radius: 8px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  color: #333;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.list-group-item {
+  font-size: 1em;
+  color: #555;
+}
