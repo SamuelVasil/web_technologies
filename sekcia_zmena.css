@@ -1,0 +1,93 @@
+/* Основной стиль */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; /* Цвет фона для устройства */
+  background-image: linear-gradient(135deg, #e2e2e2 25%, transparent 25%, transparent 75%, #e2e2e2 75%, #e2e2e2), linear-gradient(225deg, #e2e2e2 25%, transparent 25%, transparent 75%, #e2e2e2 75%, #e2e2e2);
+  background-size: 20px 20px; /* Размер узора */
+}
+
+/* Навигационная панель */
+.navbar {
+  background-color: #343a40; /* Темно-серый цвет */
+  padding: 1rem;
+}
+
+.navbar .nav-link {
+  color: #fff;
+  font-weight: 600;
+  margin-right: 15px; /* Расстояние между кнопками */
+  border-radius: 5px; /* Скругленные углы */
+  padding: 10px 20px; /* Внутренние отступы для кнопок */
+  text-decoration: none; /* Убираем подчеркивание */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  background-color: #0077b6; /* Цвет фона при наведении */
+  color: #fff; /* Цвет текста при наведении */
+}
+
+/* Основное содержимое */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.sekcia-zmena-section {
+  background-color: #ffffff; /* Белый фон для секций */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.sekcia-zmena-section h3 {
+  color: #0077b6;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.sekcia-zmena-section p {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.img-placeholder {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-placeholder:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Футер */
+footer {
+  background-color: #343a40; /* Темно-серый цвет */
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+  .sekcia-zmena-section {
+    padding: 1.5rem;
+  }
+
+  .sekcia-zmena-section h3 {
+    font-size: 1.8rem;
+  }
+
+  .sekcia-zmena-section p {
+    font-size: 1rem;
+  }
+}
