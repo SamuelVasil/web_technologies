@@ -10,7 +10,7 @@ body {
 
 /* Навигационная панель */
 .navbar {
-  background-color: #343a40; /* Темно-серый цвет */
+  background-color: #212529; /* Темно-серый цвет */
   padding: 1rem;
 }
 
@@ -70,7 +70,7 @@ body {
 
 /* Футер */
 footer {
-  background-color: #343a40; /* Темно-серый цвет */
+  background-color: #212529; /* Темно-серый цвет */
   color: #fff;
   padding: 1rem;
   text-align: center;
