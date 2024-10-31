@@ -5,62 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Procesory 2024 | Sekcia Zmena</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="sekcia_zmena.css"> <!-- Skontrolujte cestu -->
-  <link rel="stylesheet" href="styles/buttons.css"> <!-- Подключаем файл со стилями кнопок -->
+  <link rel="stylesheet" href="sekcia_zmena.css">
+  <link rel="stylesheet" href="styles/buttons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-Lit5Ibv3wzDd/NvUkN1mEDsD8dK/UnxYaCz8wEzXzXLfDRGrM6V/8PpAsi39LZQJ" crossorigin="anonymous">
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
+  <nav class="navbar">
+    <div class="navbar-brand-container">
       <a class="navbar-brand" href="#">Procesory 2024</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button id="theme-toggle" class="btn nav-button">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon" style="display:none;"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link btn nav-button" href="index.html">Domov</a></li>
-          <li class="nav-item"><a class="nav-link btn nav-button" href="flex_grid.html">Výkonnostné Porovnanie</a></li>
-          <li class="nav-item"><a class="nav-link btn nav-button" href="hobby.html">Hobbies</a></li>
-          <li class="nav-item"><a class="nav-link btn nav-button active" href="sekcia_zmena.html">Sekcia Zmena</a></li>
-        </ul>
-      </div>
     </div>
+    <ul class="navbar-nav">
+      <li><a class="nav-link" href="index.html">Domov</a></li>
+      <li><a class="nav-link" href="flex_grid.html">Výkonnostné Porovnanie</a></li>
+      <li><a class="nav-link" href="hobby.html">Hobbies</a></li>
+      <li><a class="nav-link active" href="sekcia_zmena.html">Sekcia Zmena</a></li>
+    </ul>
   </nav>
 
   <!-- Main Content -->
-  <div class="container mt-4">
-    <h2 class="text-center mb-4">Sekcia Zmena</h2>
-    
-    <div class="row sekcia-zmena-section">
-      <div class="col-12 col-md-6">
-        <img src="media/change.jpg" alt="Zmena obrázok" class="img-placeholder"> <!-- Skontrolujte cestu -->
-      </div>
-      <div class="col-12 col-md-6">
-        <h3>Zmena výkonu procesorov</h3>
-        <p>Podrobné porovnanie zmien vo výkone procesorov s dôrazom na najnovšie technologické úspechy.</p>
-      </div>
+  <div class="highlight-box">
+    <h2 class="sekcia-zmena-title">Sekcia Zmena</h2>
+  </div>
+
+  <!-- Новые блоки с информацией -->
+  <div class="row sekcia-zmena-section appear-animation">
+    <div class="col image-container">
+      <img src="media/procesor.jpg" alt="Zmena obrázok" class="img-placeholder">
     </div>
-    
-    <div class="row sekcia-zmena-section">
-      <div class="col-12 col-md-6 order-md-2">
-        <img src="media/performance.jpg" alt="Výkon obrázok" class="img-placeholder"> <!-- Skontrolujte cestu -->
-      </div>
-      <div class="col-12 col-md-6 order-md-1">
-        <h3>Výkon a spotreba</h3>
-        <p>Prehľad energeticky úsporných možností moderných procesorov a ich vplyv na výkon.</p>
-      </div>
+    <div class="col text-container">
+      <h3>Zmena výkonu procesorov</h3>
+      <p>Podrobné porovnanie zmien vo výkone procesorov s dôrazom na najnovšie technologické úspechy. Sledujeme moderné trendy a ich vplyv na výkon a spotrebu procesorov.</p>
+    </div>
+  </div>
+
+  <div class="row sekcia-zmena-section appear-animation">
+    <div class="col order-2 image-container">
+      <img src="media/processor2.jpg" alt="Výkon obrázok" class="img-placeholder">
+    </div>
+    <div class="col order-1 text-container">
+      <h3>Výkon a spotreba</h3>
+      <p>Prehľad energeticky úsporných možností moderných procesorov, ich efektivita a vplyv na ekologické prostredie. Riešenia pre náročné úlohy s minimálnym dopadom na energiu.</p>
+    </div>
+  </div>
+
+  <div class="row sekcia-zmena-section appear-animation">
+    <div class="col image-container">
+      <img src="media/processor3.jpg" alt="Inovácia obrázok" class="img-placeholder">
+    </div>
+    <div class="col text-container">
+      <h3>Technologické Inovácie</h3>
+      <p>Významné kroky v oblasti umelej inteligencie a ich aplikácia v procesoroch. Moderné procesory sú pripravené zvládať náročné úlohy a prinášajú rýchlosť a výkon na novú úroveň.</p>
     </div>
   </div>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3 mt-4">
-    <div class="container">
-      <p class="mb-1">&copy; 2024 Procesory | Sekcia Zmena</p>
-    </div>
+  <footer>
+    <p>&copy; 2024 Procesory | Sekcia Zmena</p>
   </footer>
 
-  <!-- Bootstrap JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+    const navbar = document.querySelector('.navbar');
+    const sections = document.querySelectorAll('.sekcia-zmena-section');
+    const footer = document.querySelector('footer');
+
+    themeToggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      navbar.classList.toggle('dark');
+      sections.forEach(section => section.classList.toggle('dark'));
+      footer.classList.toggle('dark');
+
+      // Переключение иконок
+      const sunIcon = themeToggleButton.querySelector('.fa-sun');
+      const moonIcon = themeToggleButton.querySelector('.fa-moon');
+      sunIcon.style.display = sunIcon.style.display === 'none' ? 'inline' : 'none';
+      moonIcon.style.display = moonIcon.style.display === 'inline' ? 'none' : 'inline';
+    });
+  </script>
 </body>
 </html>
