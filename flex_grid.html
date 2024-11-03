@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Výkonnostné Porovnanie</title>
   <link rel="stylesheet" href="style_flex_grid.css">
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -18,56 +20,70 @@
       <a href="sekcia_zmena.html">Sekcia Zmena</a>
     </div>
   </nav>
-
-  <!-- Content Section 1 -->
-  <div class="content-grid">
-    <div class="grid-item">
-      <img src="media/arrow_graph.jpg" alt="Processor Image">
+  <div class="content">
+    <!-- Content Section 1 -->
+    <div class="content-grid">
+      <div class="grid-item">
+        <img src="media/arrow_graph.jpg" alt="Processor Image">
+      </div>
+      <div class="grid-item text-content">
+        <h2>
+          <a href="https://www.pcgamer.com/hardware/processors/intels-arrow-lake-chips-arent-winning-any-awards-for-gaming-performance-but-i-think-its-new-e-cores-deserve-a-gold-star/"
+            target="_blank" class="link-title">
+            Arrow Lake Performace
+          </a>
+        </h2>
+        <p>Intelove procesory Arrow Lake prinášajú zlepšenie výkonu oproti predchádzajúcej generácii Raptor Lake, s
+          nárastom približne 9 % v jednovláknových a až 18 % v viacvláknových testoch ako Geekbench a Cinebench. Majú
+          nové výkonné jadrá Lion Cove a efektívne jadrá Skymont, čo zvyšuje efektivitu a výkon pri viacerých vláknach.
+          Hoci dosahujú lepšie výsledky v syntetických benchmarkoch, v bežných aplikáciách, ako je prehliadanie webu,
+          môžu stále mierne zaostávať za starším modelom Core i9-14900K</p>
+      </div>
     </div>
-    <div class="grid-item text-content">
-      <h2>
-        <a href="https://www.pcgamer.com/hardware/processors/intels-arrow-lake-chips-arent-winning-any-awards-for-gaming-performance-but-i-think-its-new-e-cores-deserve-a-gold-star/" target="_blank" class="link-title">
-          Arrow Lake Performace
-        </a>
-      </h2>
-            <p>Intelove procesory Arrow Lake prinášajú zlepšenie výkonu oproti predchádzajúcej generácii Raptor Lake, s nárastom približne 9 % v jednovláknových a až 18 % v viacvláknových testoch ako Geekbench a Cinebench. Majú nové výkonné jadrá Lion Cove a efektívne jadrá Skymont, čo zvyšuje efektivitu a výkon pri viacerých vláknach. Hoci dosahujú lepšie výsledky v syntetických benchmarkoch, v bežných aplikáciách, ako je prehliadanie webu, môžu stále mierne zaostávať za starším modelom Core i9-14900K</p>
+
+    <!-- Content Section 2 -->
+    <div class="content-grid">
+      <div class="grid-item">
+        <img src="media/x3D_graph.jpg" alt="Processor Image">
+      </div>
+      <div class="grid-item text-content">
+        <h2>
+          <a href="https://wccftech.com/gigabyte-claims-up-to-5-gaming-performance-boost-with-x3d-turbo-mode-with-amd-ryzen-7-9800x3d-cpu/"
+            target="_blank" class="link-title">
+            x3D performace
+          </a>
+        </h2>
+        <p>Procesory AMD Ryzen 9000X3D, napríklad Ryzen 7 9800X3D a Ryzen 9 9950X3D, prinášajú výrazné zlepšenie výkonu
+          oproti predchádzajúcim modelom. Ryzen 9 9950X3D dosahuje v multi-core testoch až o 18 % lepšie výsledky než
+          jeho predchodca, zatiaľ čo Ryzen 7 9800X3D zlepšuje multi-core výkon o 35 % a single-core o približne 24 %.
+          Väčšia cache a vyššie frekvencie ho robia výkonným najmä v hrách a pri multitaskingu</p>
+      </div>
+    </div>
+
+    <!-- Content Section 3 -->
+    <div class="content-grid">
+      <div class="grid-item">
+        <img src="media/watt_graph.jpg" alt="Processor Image">
+      </div>
+      <div class="grid-item text-content">
+        <h2>
+          <a href="https://www.notebookcheck.net/Arrow-Lake-vs-Zen-5-Core-Ultra-5-245K-demolishes-Ryzen-5-9600X-and-Ryzen-7-9700X-in-Geekbench-multi-core-test.875814.0.html"
+            target="_blank" class="link-title">
+            Performace per watt zen5 vs arrow lake
+          </a>
+        </h2>
+        <p>Intel Arrow Lake a AMD Zen 5 ponúkajú rôzne výhody vo výkone na watt. Arrow Lake je silný v jednovláknovom
+          výkone, čo mu dáva náskok v hrách, ale pri vyššom zaťažení má vyššiu spotrebu. Zen 5 je energeticky
+          efektívnejší v viacvláknových úlohách, ako je renderovanie a úprava videa, vďaka pokročilejšiemu 4nm procesu
+        </p>
+      </div>
     </div>
   </div>
-
-  <!-- Content Section 2 -->
-  <div class="content-grid">
-    <div class="grid-item">
-      <img src="media/x3D_graph.jpg" alt="Processor Image">
-    </div>
-    <div class="grid-item text-content">
-      <h2>
-        <a href="https://wccftech.com/gigabyte-claims-up-to-5-gaming-performance-boost-with-x3d-turbo-mode-with-amd-ryzen-7-9800x3d-cpu/" target="_blank" class="link-title">
-          x3D performace
-        </a>
-      </h2>
-       <p>Procesory AMD Ryzen 9000X3D, napríklad Ryzen 7 9800X3D a Ryzen 9 9950X3D, prinášajú výrazné zlepšenie výkonu oproti predchádzajúcim modelom. Ryzen 9 9950X3D dosahuje v multi-core testoch až o 18 % lepšie výsledky než jeho predchodca, zatiaľ čo Ryzen 7 9800X3D zlepšuje multi-core výkon o 35 % a single-core o približne 24 %. Väčšia cache a vyššie frekvencie ho robia výkonným najmä v hrách a pri multitaskingu</p>
-    </div>
-  </div>
-
-  <!-- Content Section 3 -->
-  <div class="content-grid">
-    <div class="grid-item">
-      <img src="media/watt_graph.jpg" alt="Processor Image">
-    </div>
-    <div class="grid-item text-content">
-      <h2>
-        <a href="https://www.notebookcheck.net/Arrow-Lake-vs-Zen-5-Core-Ultra-5-245K-demolishes-Ryzen-5-9600X-and-Ryzen-7-9700X-in-Geekbench-multi-core-test.875814.0.html" target="_blank" class="link-title">
-          Performace per watt zen5 vs arrow lake
-        </a>
-      </h2>
-       <p>Intel Arrow Lake a AMD Zen 5 ponúkajú rôzne výhody vo výkone na watt. Arrow Lake je silný v jednovláknovom výkone, čo mu dáva náskok v hrách, ale pri vyššom zaťažení má vyššiu spotrebu. Zen 5 je energeticky efektívnejší v viacvláknových úlohách, ako je renderovanie a úprava videa, vďaka pokročilejšiemu 4nm procesu</p>
-    </div>
-  </div>
-
   <!-- Footer -->
   <footer>
     <p>&copy; 2024 Procesory | Výkonnostné Porovnanie</p>
   </footer>
 
 </body>
+
 </html>
