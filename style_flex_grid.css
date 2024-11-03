@@ -64,6 +64,17 @@
       margin-bottom: 10px;
     }
 
+    /* Jemny prechod */    
+    .link-title {
+      text-decoration: none; 
+      color: inherit; 
+      transition: color 0.3s ease; 
+    }
+
+    .link-title:hover {
+      color: #5787be;
+    }
+
     /* Responsive Adjustments */
     @media (min-width: 550px) {
       .content-grid {
