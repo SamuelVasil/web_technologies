@@ -1,11 +1,11 @@
 html,
 body {
   height: 100%;
-  /* Set the height to 100% */
+  
   display: flex;
-  /* Use flexbox on body */
+  
   flex-direction: column;
-  /* Arrange children in a column */
+  
 }
 
 body {
@@ -17,10 +17,10 @@ body {
 
 .content {
   flex: 1;
-  /* Take up available space */
+  
 }
 
-/* Basic Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +34,7 @@ body {
   color: #212529;
 }
 
-/* Navbar */
+
 .navbar {
   background-color: #212529;
   color: #fff;
@@ -43,13 +43,13 @@ body {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  /* Keep navbar at the top */
+  
   width: 100%;
-  /* Full width */
+  
   top: 0;
-  /* Position at the top */
+  
   z-index: 1000;
-  /* Ensure it stays on top of content */
+  
 }
 
 .navbar a {
@@ -60,17 +60,17 @@ body {
 
 .navbar a:hover {
   text-decoration: underline;
-  /*zosuladit s index.html*/
+  
 }
 
-/* Grid Layout for Content Sections */
+
 .content-grid {
   display: grid;
   grid-template-columns: 1fr;
-  /* Single column by default */
+  
   gap: 20px;
   margin: 100px 0 20px;
-  /* Margin to avoid overlap with fixed navbar */
+  
 }
 
 .content-grid img {
@@ -93,7 +93,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* Jemny prechod */
+
 .link-title {
   text-decoration: none;
   color: inherit;
@@ -104,40 +104,40 @@ body {
   color: #5787be;
 }
 
-/* Responsive Adjustments */
+
 @media (min-width: 550px) {
   .content-grid {
     grid-template-columns: 1fr 1fr;
-    /* Two columns on medium screens */
+    
   }
 }
 
 @media (min-width: 850px) {
   .content-grid {
     grid-template-columns: repeat(2, 1fr);
-    /* Two columns on larger screens */
+    
   }
 }
 
 @media (min-width: 1250px) {
   .content-grid {
     grid-template-columns: repeat(3, 1fr);
-    /* Three columns on larger screens */
+    
   }
 }
 
 @media (min-width: 1400px) {
   .content-grid {
     grid-template-columns: repeat(3, 1fr);
-    /* Maintain three columns on very large screens */
+    
     max-width: 1400px;
-    /* Set max width for the grid */
+    
     margin: 100px auto;
-    /* Center the grid */
+    
   }
 }
 
-/* Footer */
+
 footer {
   background-color: #212529;
   color: white;
