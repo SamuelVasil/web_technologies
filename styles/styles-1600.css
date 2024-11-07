@@ -1,0 +1,51 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    font-size: 18px;
+  }
+  
+  .navbar {
+    padding: 1.5rem 3rem;
+    font-size: 1.2rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.2rem;
+  }
+  
+  .container {
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+  
+  .highlight-box {
+    padding: 25px;
+    font-size: 1.2rem;
+    max-width: 900px;
+  }
+  
+  .sekcia-zmena-title {
+    font-size: 3.5rem;
+  }
+  
+  .sekcia-zmena-section {
+    padding: 2rem;
+    max-width: 900px;
+  }
+  
+  .sekcia-zmena-section h3 {
+    font-size: 2rem;
+  }
+  
+  footer {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+  

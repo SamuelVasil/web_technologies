@@ -4,67 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Procesory 2024 | Sekcia Zmena</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="sekcia_zmena.css">
+  <script src="scripts/loadcss.js" defer></script>
+  <script src="scripts/resize.js" defer></script>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/sekcia_zmena.css">
   <link rel="stylesheet" href="styles/buttons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-Lit5Ibv3wzDd/NvUkN1mEDsD8dK/UnxYaCz8wEzXzXLfDRGrM6V/8PpAsi39LZQJ" crossorigin="anonymous">
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-brand-container">
       <a class="navbar-brand" href="#">Procesory 2024</a>
+
       <button id="theme-toggle" class="btn nav-button">
         <i class="fas fa-sun"></i>
         <i class="fas fa-moon" style="display:none;"></i>
       </button>
+
     </div>
     <ul class="navbar-nav">
       <li><a class="nav-link" href="index.html">Domov</a></li>
-      <li><a class="nav-link" href="flex_grid.html">Výkonnostné Porovnanie</a></li>
-      <li><a class="nav-link" href="hobby.html">Hobbies</a></li>
       <li><a class="nav-link active" href="sekcia_zmena.html">Sekcia Zmena</a></li>
     </ul>
   </nav>
 
-  <!-- Main Content -->
   <div class="highlight-box">
+    <button id="increase_font">+ Font</button>
+
     <h2 class="sekcia-zmena-title">Sekcia Zmena</h2>
+
+    <button id="decrease_font">- Font</button>
   </div>
 
-  <!-- Новые блоки с информацией -->
   <div class="row sekcia-zmena-section appear-animation">
     <div class="col image-container">
-      <img src="media/procesor.jpg" alt="Zmena obrázok" class="img-placeholder">
+      <img src="media/styles.png" alt="Zmena obrázok" class="img-placeholder">
     </div>
     <div class="col text-container">
-      <h3>Zmena výkonu procesorov</h3>
-      <p>Podrobné porovnanie zmien vo výkone procesorov s dôrazom na najnovšie technologické úspechy. Sledujeme moderné trendy a ich vplyv na výkon a spotrebu procesorov.</p>
+      <h3>CSS Files pre rôzne rozlíšenia</h3>
+      <p>Pridanie CSS súborov pre rôzne typy rozlíšení. Zmena fontu, background farby, margins a pod.</p>
     </div>
   </div>
 
   <div class="row sekcia-zmena-section appear-animation">
     <div class="col order-2 image-container">
-      <img src="media/processor2.jpg" alt="Výkon obrázok" class="img-placeholder">
+      <img src="media/scripts.png" alt="Výkon obrázok" class="img-placeholder">
     </div>
     <div class="col order-1 text-container">
-      <h3>Výkon a spotreba</h3>
-      <p>Prehľad energeticky úsporných možností moderných procesorov, ich efektivita a vplyv na ekologické prostredie. Riešenia pre náročné úlohy s minimálnym dopadom na energiu.</p>
+      <h3>Javascripts</h3>
+      <p>Javascript súbory pre manipuláciu so stránkou a prepínaním na základe rozlíšenia + Dark Mode button. </p>
     </div>
   </div>
 
   <div class="row sekcia-zmena-section appear-animation">
     <div class="col image-container">
-      <img src="media/processor3.jpg" alt="Inovácia obrázok" class="img-placeholder">
+      <img src="media/html.png" alt="Inovácia obrázok" class="img-placeholder">
     </div>
     <div class="col text-container">
-      <h3>Technologické Inovácie</h3>
-      <p>Významné kroky v oblasti umelej inteligencie a ich aplikácia v procesoroch. Moderné procesory sú pripravené zvládať náročné úlohy a prinášajú rýchlosť a výkon na novú úroveň.</p>
+      <h3>HTML stránky</h3>
+      <p>Samotné pridanie HTML stránok ktoré si zobrazujeme.</p>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2024 Procesory | Sekcia Zmena</p>
   </footer>
@@ -83,7 +85,6 @@
       sections.forEach(section => section.classList.toggle('dark'));
       footer.classList.toggle('dark');
 
-      // Переключение иконок
       const sunIcon = themeToggleButton.querySelector('.fa-sun');
       const moonIcon = themeToggleButton.querySelector('.fa-moon');
       sunIcon.style.display = sunIcon.style.display === 'none' ? 'inline' : 'none';
