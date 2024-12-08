@@ -21,6 +21,7 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
+    // Send the form data to the server
     axios.post('http://localhost:3005/users', userData)
       .then((response) => {
         alert('User registered successfully');
@@ -75,7 +76,7 @@ function Register() {
           />
         </div>
         <div>
-          <label>Notes</label>
+          <label>Notes-optional</label>
           <input
             name="notes"
             value={userData.notes}
@@ -83,7 +84,7 @@ function Register() {
           />
         </div>
         <div>
-          <label>Telephone</label>
+          <label>Telephone-optional</label>
           <input
             type="tel"
             name="tel"

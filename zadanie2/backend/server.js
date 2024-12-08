@@ -14,11 +14,10 @@ const pool = new Pool({
   user: "postgres",
   password: "zadanie2",  // Your database password
   database: "zadanie2",  // Your database name
-  host: "serverpc.corrupted.cloud",  // Your database host
+  host: "serverpc.corrupted.cloud",  // Your database host (use 'localhost' for local setup)
   port: 5432,  // Default PostgreSQL port
   max: 10,  // Maximum number of clients in the pool
 });
-
 
 pool.connect((err, connection) => {
   if (err) throw err;
@@ -26,7 +25,7 @@ pool.connect((err, connection) => {
 });
 
 app.get("/users", (req, res) => {
-  const sql = "SELECT * FROM users";
+  const sql = "SELECT * FROM users ORDER BY id";
   pool.query(sql, (err, result) => {
     if (err) {
       console.error("Error fetching users:", err.message);
@@ -36,46 +35,70 @@ app.get("/users", (req, res) => {
   });
 });
 
+app.post("/users", async (req, res) => {
+  const { name, birth_year, state, email, notes, tel } = req.body;
 
-app.post("/users", (req, res) => {
-    const { name, birth_year, state, email, notes, tel } = req.body;
-    const sql = "INSERT INTO users(name, birth_year, state, email, notes, tel) VALUES($1, $2, $3, $4, $5, $6) RETURNING *";
-    pool.query(sql, [name, birth_year, state, email, notes, tel], (err, result) => {
-      if (err) {
-        console.error("Error adding user:", err.message);
-        return res.status(500).json({ error: err.message });
-      }
-      return res.status(201).json(result.rows);
-    });
-  });
-  
-  
-  app.patch("/users/:id", (req, res) => {
-    const id = Number(req.params.id);
-    const { name, birth_year, state, email, notes, tel } = req.body;
-    const sql = "UPDATE users SET name=$1, birth_year=$2, state=$3, email=$4, notes=$5, tel=$6 WHERE id=$7";
-    pool.query(sql, [name, birth_year, state, email, notes, tel, id], (err, result) => {
-      if (err) {
-        console.error("Error updating user:", err.message);
-        return res.status(500).json({ error: err.message });
-      }
-      return res.status(200).send(`User updated successfully for Id: ${id}`);
-    });
-  });
-  
+  try {
+    const freeIdQuery = "SELECT MIN(id + 1) AS free_id FROM users WHERE id + 1 NOT IN (SELECT id FROM users)";
+    const freeIdResult = await pool.query(freeIdQuery);
+    let idToUse = freeIdResult.rows.length > 0 ? freeIdResult.rows[0].free_id : null;
 
+    if (idToUse === null) {
+      const maxIdQuery = "SELECT MAX(id) AS max_id FROM users";
+      const maxIdResult = await pool.query(maxIdQuery);
+      idToUse = maxIdResult.rows[0].max_id + 1;
+    }
 
-app.delete("/users/:id", (req, res) => {
+    const sql = "INSERT INTO users(id, name, birth_year, state, email, notes, tel) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *";
+    const result = await pool.query(sql, [idToUse, name, birth_year, state, email, notes, tel]);
+
+    return res.status(201).json(result.rows[0]);
+
+  } catch (err) {
+    console.error("Error adding user:", err.message);
+    return res.status(500).json({ error: err.message });
+  }
+});
+
+app.patch("/users/:id", (req, res) => {
   const id = Number(req.params.id);
-  const sql = "DELETE FROM users WHERE id=$1";
-  pool.query(sql, [id], (err, result) => {
+  const { name, birth_year, state, email, notes, tel } = req.body;
+  const sql = "UPDATE users SET name=$1, birth_year=$2, state=$3, email=$4, notes=$5, tel=$6 WHERE id=$7";
+  pool.query(sql, [name, birth_year, state, email, notes, tel, id], (err, result) => {
     if (err) {
-      console.error("Error deleting user:", err.message);
+      console.error("Error updating user:", err.message);
       return res.status(500).json({ error: err.message });
     }
-    return res.status(200).send(`User deleted successfully for id: ${id}`);
+    return res.status(200).send(`User updated successfully for Id: ${id}`);
   });
 });
+
+app.delete("/users", (req, res) => {
+  const { ids } = req.body; 
+  if (!Array.isArray(ids) || ids.length === 0) {
+    return res.status(400).json({ error: "No user IDs provided for deletion" });
+  }
+
+  const sqlDelete = "DELETE FROM users WHERE id = ANY($1)";
+
+  pool.query(sqlDelete, [ids], (err, result) => {
+    if (err) {
+      console.error("Error deleting users:", err.message);
+      return res.status(500).json({ error: err.message });
+    }
+
+    const sqlResetSequence = "SELECT setval(pg_get_serial_sequence('users', 'id'), (SELECT max(id) FROM users));";
+    
+    pool.query(sqlResetSequence, (err, result) => {
+      if (err) {
+        console.error("Error resetting sequence:", err.message);
+        return res.status(500).json({ error: err.message });
+      }
+      return res.status(200).send(`${ids.length} users deleted successfully`);
+    });
+  });
+});
+
 
 // Start the server
 app.listen(port, (err) => {

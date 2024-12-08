@@ -163,6 +163,27 @@ nav a:hover {
   text-decoration: underline;
 }
 
+
+.filters {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.filters input {
+  padding: 8px;
+  margin: 0 10px;
+  width: 200px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filters input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+}
+
 .user-table {
   margin-top: 20px;
   overflow-x: auto;
