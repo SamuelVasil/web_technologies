@@ -1,0 +1,19 @@
+.img-placeholder {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .content-section {
+      margin-top: 20px;
+    }
+
+        
+.link-title {
+  text-decoration: none; 
+  color: inherit; 
+  transition: color 0.3s ease; 
+}
+
+.link-title:hover {
+  color: #5787be;
+}

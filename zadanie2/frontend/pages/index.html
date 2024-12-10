@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2024 Procesory</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">2024 Procesory</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="flex_grid.html">Výkonnostné porovnanie</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hobby.html">Hobbies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sekcia_zmena.html">Sekcia Zmena</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:3000">Database</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h2 class="text-center mb-4">Arrow Lake a Zen 5-x3D</h2>
+    
+    <div class="row content-section">
+      <div class="col-12 col-md-6">
+        <img src="media/intel-arrowlake1.jpg" alt="Procesor Image 1" class="img-placeholder">
+      </div>
+      <div class="col-12 col-md-6">
+        <h3>
+            <a href="https://www.techspot.com/review/2811-cpu-cache-vs-cores/" target="_blank" class="link-title">
+                E-cores vs X3D cache
+            </a>
+        </h3>
+        <p>E-jadrá, ktoré sú súčasťou Intelových procesorov s hybridnou architektúrou, sú navrhnuté na efektívne zvládanie menej náročných úloh pri nižšej spotrebe energie, čo umožňuje silným P-jadrám (Performance cores) sústrediť sa na výkonovo náročné operácie. Týmto prístupom Intel zlepšuje multitasking a energetickú účinnosť pri rôznorodých zaťaženiach</p>
+        <p>AMD-ova X3D cache na Zen 5 procesoroch zase pridáva ďalšiu vrstvu L3 cache nad základnými jadrami, čo zvyšuje výkon najmä v hrách a aplikáciách citlivých na pamäťovú latenciu. Tento prístup je efektívny pre viacvláknové aplikácie a pomáha zlepšiť rýchlosť spracovania pri nízkej spotrebe energie</p>
+      </div>
+    </div>
+
+    <div class="row content-section">
+      <div class="col-12 col-md-6 order-md-2">
+        <img src="media/x3D.jpg" alt="Procesor Image 2" class="img-placeholder">
+      </div>
+      <div class="col-12 col-md-6 order-md-1">
+        <h3>
+            <a href="https://en.wikipedia.org/wiki/Performance_per_watt" target="_blank" class="link-title">
+                Performace per watt
+            </a>
+        </h3>
+        <p>Intel Arrow Lake a AMD Zen 5 prinášajú výrazné vylepšenia v oblasti výkonu na watt, avšak s rozdielnymi prístupmi. Arrow Lake od Intelu využíva hybridnú architektúru, kde kombinuje vysokovýkonné a efektívne jadrá (P-cores a E-cores). Tento dizajn zvyšuje výkon v jednovláknových úlohách, čo ho robí výhodným pre hry a iné aplikácie, ktoré využívajú vysoké frekvencie. Hoci je efektívnejší ako jeho predchodcovia, Intelov výkon pri vyšších výkonových cieľoch môže byť náročnejší na spotrebu energie.</p>
+        <p>AMD Zen 5 sa naopak sústreďuje na vysoký viacvláknový výkon a lepšiu energetickú efektivitu vďaka použitiu TSMC 4nm procesu. Zen 5 dosahuje veľmi dobré hodnoty výkonu na watt, a to predovšetkým v produktívnych úlohách, ako je editovanie videa alebo 3D rendering. V hrách si tiež vedie dobre, ale v jednovláknových aplikáciách môže mať Intel mierny náskok. Výsledkom je, že AMD Zen 5 je energeticky efektívnejší, pričom lepšie využíva viacvláknový potenciál procesorov, najmä pri nižších výkonových nastaveniach.</p>
+      </div>
+    </div>
+
+
+    <div class="row content-section">
+      <div class="col-12 col-md-6">
+        <img src="media/chiplet.jpg" alt="Procesor Image 3" class="img-placeholder">
+      </div>
+      <div class="col-12 col-md-6">
+        <h3>
+          <a href="https://www.xda-developers.com/how-chiplets-and-tiles-are-transforming-semiconductors/" target="_blank" class="link-title">
+              Tile-base architektura vs chiplet architektura
+          </a>
+        </h3>
+         <p>Dlaždicová architektúra rozdeľuje procesor na menšie bloky nazývané dlaždice, pričom každá dlaždica môže obsahovať samostatné procesorové jadrá a iné komponenty. Tento prístup umožňuje lepšiu modulárnosť a škálovateľnosť, pretože môže byť jednoduchšie pridávať alebo vylepšovať jednotlivé dlaždice. Dlaždice môžu tiež zdieľať zdroje, ako je pamäť, čo zvyšuje efektívnosť. Tento dizajn je napríklad použitý v procesoroch Intel Meteor Lake, ktoré kombinujú rôzne funkcie do samostatných dlaždíc, ako sú CPU, GPU a I/O</p>
+        <p>Architektúra chipletov na druhej strane rozdeľuje celý čip na menšie časti, nazývané chiplety, ktoré sa následne integrujú pomocou pokročilých technológií balenia. Tento prístup znižuje náklady na výrobu, pretože umožňuje použitie rôznych technológií výroby pre jednotlivé chiplety. Chiplety môžu byť navrhnuté pre rôzne účely, čím sa zvyšuje flexibilita a prispôsobiteľnosť celého systému. Napríklad AMD úspešne implementovalo chipletovú architektúru vo svojich procesoroch EPYC, čo im umožnilo dosiahnuť vysoký výkon a efektivitu nákladov</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<footer class="bg-dark text-white text-center py-3 mt-4">
+  <div class="container">
+    <p class="mb-1">&copy; 2024 Procesory | All Rights Reserved</p>
+  </div>
+</footer>
+</html>

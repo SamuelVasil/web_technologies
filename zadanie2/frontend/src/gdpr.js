@@ -13,7 +13,9 @@ function GDPR() {
       <h3>Right to be Informed</h3>
       <p>Under the GDPR, individuals have the right to be informed about the collection and use of their personal data. This is commonly known as the "Right to be Informed". You can read more about this right by clicking the link below:</p>
       
-      <a href="https://gdpr-info.eu/issues/right-to-be-informed/" target="_blank" rel="noopener noreferrer">
+      <a href="https://gdpr-info.eu/issues/right-to-be-informed/" target="_blank" rel="noopener noreferrer"
+        className="external-link"
+      >
         Right to be Informed - GDPR Information
       </a>
     </div>
