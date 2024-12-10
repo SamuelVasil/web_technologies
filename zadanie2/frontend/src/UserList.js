@@ -39,7 +39,7 @@ function UserList() {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3005/users/${id}`)
+    axios.delete("http://localhost:3005/users", { data: { ids: [id] } })
       .then((response) => {
         setUsers(users.filter(user => user.id !== id));
         alert('User deleted successfully');

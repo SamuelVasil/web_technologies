@@ -7,8 +7,16 @@ function Register() {
     birth_year: '',
     state: '',
     email: '',
-    notes: '',  
-    tel: '',    
+    notes: '',
+    tel: '',
+  });
+
+  const [errors, setErrors] = useState({
+    name: '',
+    birth_year: '',
+    state: '',
+    email: '',
+    tel: '',
   });
 
   const handleChange = (e) => {
@@ -18,17 +26,50 @@ function Register() {
     });
   };
 
+  const validate = () => {
+    const newErrors = {};
+    const nameRegex = /^[a-zA-Z\s]+$/;  // Only letters and spaces
+    const stateRegex = /^[a-zA-Z\s]+$/; // Only letters and spaces
+
+    // Validate Name
+    if (!nameRegex.test(userData.name)) {
+      newErrors.name = 'Name should contain only letters and spaces';
+    }
+
+    // Validate State
+    if (!stateRegex.test(userData.state)) {
+      newErrors.state = 'State should contain only letters and spaces';
+    }
+
+
+    // If there are errors, return false, else return true
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Send the form data to the server
-    axios.post('http://localhost:3005/users', userData)
-      .then((response) => {
-        alert('User registered successfully');
-      })
-      .catch((error) => {
-        console.error('Error registering user:', error);
-      });
+
+    if (validate()) {
+      // If valid, send the form data to the server
+      axios.post('http://localhost:3005/users', userData)
+        .then((response) => {
+          alert('User registered successfully');
+          // Reset the form after successful registration
+          setUserData({
+            name: '',
+            birth_year: '',
+            state: '',
+            email: '',
+            notes: '',
+            tel: '',
+          });
+          setErrors({});  // Optionally reset errors as well
+        })
+        .catch((error) => {
+          console.error('Error registering user:', error);
+        });
+    }
   };
 
   return (
@@ -43,7 +84,9 @@ function Register() {
             value={userData.name}
             onChange={handleChange}
             required
+            style={{ borderColor: errors.name ? 'red' : '' }}
           />
+          {errors.name && <span className="error">{errors.name}</span>}
         </div>
         <div>
           <label>Birth Year</label>
@@ -53,7 +96,9 @@ function Register() {
             value={userData.birth_year}
             onChange={handleChange}
             required
+            style={{ borderColor: errors.birth_year ? 'red' : '' }}
           />
+          {errors.birth_year && <span className="error">{errors.birth_year}</span>}
         </div>
         <div>
           <label>State</label>
@@ -63,7 +108,9 @@ function Register() {
             value={userData.state}
             onChange={handleChange}
             required
+            style={{ borderColor: errors.state ? 'red' : '' }}
           />
+          {errors.state && <span className="error">{errors.state}</span>}
         </div>
         <div>
           <label>Email</label>
@@ -73,7 +120,9 @@ function Register() {
             value={userData.email}
             onChange={handleChange}
             required
+            style={{ borderColor: errors.email ? 'red' : '' }}
           />
+          {errors.email && <span className="error">{errors.email}</span>}
         </div>
         <div>
           <label>Notes-optional</label>
